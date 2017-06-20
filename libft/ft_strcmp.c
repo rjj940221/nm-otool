@@ -6,7 +6,7 @@
 /*   By: rojones <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/10 13:46:04 by rojones           #+#    #+#             */
-/*   Updated: 2016/07/23 15:29:18 by rojones          ###   ########.fr       */
+/*   Updated: 2017/06/20 09:01:47 by rojones          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	ft_strcmp(const char *s1, const char *s2)
 		if (c1 != c2)
 			return (c1 - c2);
 		i++;
-
 	}
 	if (s1[i] == '\0')
 		return (-(unsigned char)(s2[i]));

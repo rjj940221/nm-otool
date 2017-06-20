@@ -6,13 +6,13 @@
 /*   By: rojones <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/24 15:13:08 by rojones           #+#    #+#             */
-/*   Updated: 2016/06/03 08:38:42 by rojones          ###   ########.fr       */
+/*   Updated: 2017/06/20 08:56:14 by rojones          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int  ft_newword(const char *s, unsigned int i, char del)
+int	ft_newword(const char *s, unsigned int i, char del)
 {
 	if (i == 0 && s[i] == del)
 		return (0);

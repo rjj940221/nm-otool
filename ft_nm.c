@@ -9,6 +9,24 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+void ft_offset(char *data, size_t size)
+{
+	char *idx;
+
+	idx = data + *data;
+
+	while (idx - data < size)
+	{
+		if (isprint(*idx) != 0)
+			putchar(*idx);
+		/*else
+			printf("|%i|", *idx);*/
+		idx++;
+	}
+	putchar('\n');
+	putchar('\n');
+	putchar('\n');
+}
 
 void ft_process(char *data, size_t size)
 {
@@ -19,8 +37,8 @@ void ft_process(char *data, size_t size)
 	{
 		if (isprint(*idx) != 0)
 			putchar(*idx);
-		else
-			printf("|%i|", *idx);
+		/*else
+			printf("|%i|", *idx);*/
 		idx++;
 	}
 	putchar('\n');
@@ -39,12 +57,15 @@ void ft_nm(char *file)
 			puts("Could not get file propertys.\n");
 		else
 		{
-			if ((data = mmap(0, buf.st_size, PROT_READ, MAP_SHARED, fd, 0))
-				== MAP_FAILED){
+			if ((data = mmap(0, (size_t)buf.st_size, PROT_READ, MAP_SHARED, fd, 0))
+				== MAP_FAILED)
+			{
 				puts("Could not read file.\n");
 			}
-			else
-				ft_process(data, buf.st_size);
+			else {
+				//ft_offset(data, (size_t)buf.st_size);
+				ft_process(data, (size_t)buf.st_size);
+			}
 		}
 		close(fd);
 	}

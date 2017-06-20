@@ -6,7 +6,7 @@
 /*   By: rojones <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/24 15:20:51 by rojones           #+#    #+#             */
-/*   Updated: 2016/06/03 09:02:53 by rojones          ###   ########.fr       */
+/*   Updated: 2017/06/20 08:56:32 by rojones          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_numwords(char const *s, char c)
 {
 	int numword;
 	int i;
- 
+
 	i = 0;
 	numword = 0;
 	while (s[i] != '\0')

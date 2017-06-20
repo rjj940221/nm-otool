@@ -6,12 +6,11 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 13:20:06 by tfleming          #+#    #+#             */
-/*   Updated: 2016/06/07 17:28:52 by rojones          ###   ########.fr       */
+/*   Updated: 2017/06/20 09:07:19 by rojones          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 /*
 ** for deal_with_returns, the code was too atrocious with all the
@@ -94,7 +93,7 @@ static int		deal_with_returns(t_stock **pointer_to_stock
 		- (stock->read_ret > 0
 			&& *(stock->line_end) == '\n'
 			&& stock->lu != stock->line_end - stock->spill);
-	ft_memcpy(stock->spill, stock->line_end + 1, stock->lu); 
+	ft_memcpy(stock->spill, stock->line_end + 1, stock->lu);
 	stock->line_end = stock->spill;
 	return (1);
 }
