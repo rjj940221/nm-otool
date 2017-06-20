@@ -1,48 +1,6 @@
-//#include "libft/libft.h"
-#include <ctype.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft/libft.h"
+#include "Includes/nm-otool.h"
 #include <sys/mman.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
-
-void ft_offset(char *data, size_t size)
-{
-	char *idx;
-
-	idx = data + *data;
-
-	while (idx - data < size)
-	{
-		if (isprint(*idx) != 0)
-			putchar(*idx);
-		/*else
-			printf("|%i|", *idx);*/
-		idx++;
-	}
-	putchar('\n');
-	putchar('\n');
-	putchar('\n');
-}
-
-void ft_process(char *data, size_t size)
-{
-	char *idx;
-
-	idx = data;
-	while (idx - data < size)
-	{
-		if (isprint(*idx) != 0)
-			putchar(*idx);
-		/*else
-			printf("|%i|", *idx);*/
-		idx++;
-	}
-	putchar('\n');
-}
 
 void ft_nm(char *file)
 {
@@ -64,7 +22,8 @@ void ft_nm(char *file)
 			}
 			else {
 				//ft_offset(data, (size_t)buf.st_size);
-				ft_process(data, (size_t)buf.st_size);
+				//ft_process(data, (size_t)buf.st_size);
+				ft_extract_file(data);
 			}
 		}
 		close(fd);
