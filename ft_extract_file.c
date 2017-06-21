@@ -16,12 +16,15 @@ void print_bytes(const void *object, size_t size)
 	const unsigned char * const bytes = (const unsigned char *)(object);
 	size_t i;
 
-	printf("[ ");
 	for(i = 0; i < size; i++)
 	{
 		printf("%02x ", bytes[i]);
+		if ((i + 1) % 8 == 0)
+			putchar(' ');
+		if ((i + 1) % 16 == 0)
+			putchar('\n');
 	}
-	printf("]\n");
+	putchar('\n');
 }
 
 void ft_extract_file(void *data)

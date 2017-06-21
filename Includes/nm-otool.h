@@ -21,11 +21,19 @@
 # define FAT_CIGAM  		0xbebafeca
 # define ELF_MAGIC  		0x7f454c46
 
-
-
-struct s_file_info{
-	uint8_t big_endin;
-	uint32_t num_comands;
+struct section
+{
+	char sectname[16];
+	char segname[16];
+	unsigned long addr;
+	unsigned long size;
+	unsigned long offset;
+	unsigned long align;
+	unsigned long reloff;
+	unsigned long nreloc;
+	unsigned long flags;
+	unsigned long reserved1;
+	unsigned long reserved2;
 };
 
 void print_bytes(const void *object, size_t size);
