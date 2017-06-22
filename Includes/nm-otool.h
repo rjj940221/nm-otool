@@ -21,6 +21,12 @@
 # define FAT_CIGAM  		0xbebafeca
 # define ELF_MAGIC  		0x7f454c46
 
+typedef struct 	s_ofile{
+	int lc_segment;
+	int lc_symtab;
+	int lc_dysymtab;
+}				t_ofile;
+
 struct section
 {
 	char sectname[16];

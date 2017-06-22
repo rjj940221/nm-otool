@@ -53,6 +53,8 @@ sys/mman.h
 /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach.c
 Includes/nm-otool.h
 /nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/nm-otool.h
+Includes/mach_64.h
+/nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/mach_64.h
 
 /nfs/zfs-student-6/users/rojones/year2/nm-otool/libft/libft.h
 libc.h
