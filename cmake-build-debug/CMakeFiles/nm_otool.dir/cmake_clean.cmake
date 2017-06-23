@@ -1,7 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/nm_otool.dir/ft_nm.c.o"
   "CMakeFiles/nm_otool.dir/ft_extract_file.c.o"
-  "CMakeFiles/nm_otool.dir/ft_read_mach.c.o"
+  "CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o"
+  "CMakeFiles/nm_otool.dir/ft_read_march_32.c.o"
+  "CMakeFiles/nm_otool.dir/ft_otool.c.o"
+  "CMakeFiles/nm_otool.dir/ft_archive.c.o"
   "nm_otool.pdb"
   "nm_otool"
 )

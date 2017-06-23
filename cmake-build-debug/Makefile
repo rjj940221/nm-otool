@@ -123,6 +123,33 @@ nm_otool/fast:
 	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/build
 .PHONY : nm_otool/fast
 
+ft_archive.o: ft_archive.c.o
+
+.PHONY : ft_archive.o
+
+# target to build an object file
+ft_archive.c.o:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_archive.c.o
+.PHONY : ft_archive.c.o
+
+ft_archive.i: ft_archive.c.i
+
+.PHONY : ft_archive.i
+
+# target to preprocess a source file
+ft_archive.c.i:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_archive.c.i
+.PHONY : ft_archive.c.i
+
+ft_archive.s: ft_archive.c.s
+
+.PHONY : ft_archive.s
+
+# target to generate assembly for a file
+ft_archive.c.s:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_archive.c.s
+.PHONY : ft_archive.c.s
+
 ft_extract_file.o: ft_extract_file.c.o
 
 .PHONY : ft_extract_file.o
@@ -177,32 +204,86 @@ ft_nm.c.s:
 	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_nm.c.s
 .PHONY : ft_nm.c.s
 
-ft_read_mach.o: ft_read_mach.c.o
+ft_otool.o: ft_otool.c.o
 
-.PHONY : ft_read_mach.o
+.PHONY : ft_otool.o
 
 # target to build an object file
-ft_read_mach.c.o:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach.c.o
-.PHONY : ft_read_mach.c.o
+ft_otool.c.o:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_otool.c.o
+.PHONY : ft_otool.c.o
 
-ft_read_mach.i: ft_read_mach.c.i
+ft_otool.i: ft_otool.c.i
 
-.PHONY : ft_read_mach.i
+.PHONY : ft_otool.i
 
 # target to preprocess a source file
-ft_read_mach.c.i:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach.c.i
-.PHONY : ft_read_mach.c.i
+ft_otool.c.i:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_otool.c.i
+.PHONY : ft_otool.c.i
 
-ft_read_mach.s: ft_read_mach.c.s
+ft_otool.s: ft_otool.c.s
 
-.PHONY : ft_read_mach.s
+.PHONY : ft_otool.s
 
 # target to generate assembly for a file
-ft_read_mach.c.s:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach.c.s
-.PHONY : ft_read_mach.c.s
+ft_otool.c.s:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_otool.c.s
+.PHONY : ft_otool.c.s
+
+ft_read_mach_64.o: ft_read_mach_64.c.o
+
+.PHONY : ft_read_mach_64.o
+
+# target to build an object file
+ft_read_mach_64.c.o:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o
+.PHONY : ft_read_mach_64.c.o
+
+ft_read_mach_64.i: ft_read_mach_64.c.i
+
+.PHONY : ft_read_mach_64.i
+
+# target to preprocess a source file
+ft_read_mach_64.c.i:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach_64.c.i
+.PHONY : ft_read_mach_64.c.i
+
+ft_read_mach_64.s: ft_read_mach_64.c.s
+
+.PHONY : ft_read_mach_64.s
+
+# target to generate assembly for a file
+ft_read_mach_64.c.s:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach_64.c.s
+.PHONY : ft_read_mach_64.c.s
+
+ft_read_march_32.o: ft_read_march_32.c.o
+
+.PHONY : ft_read_march_32.o
+
+# target to build an object file
+ft_read_march_32.c.o:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_march_32.c.o
+.PHONY : ft_read_march_32.c.o
+
+ft_read_march_32.i: ft_read_march_32.c.i
+
+.PHONY : ft_read_march_32.i
+
+# target to preprocess a source file
+ft_read_march_32.c.i:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_march_32.c.i
+.PHONY : ft_read_march_32.c.i
+
+ft_read_march_32.s: ft_read_march_32.c.s
+
+.PHONY : ft_read_march_32.s
+
+# target to generate assembly for a file
+ft_read_march_32.c.s:
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_march_32.c.s
+.PHONY : ft_read_march_32.c.s
 
 # Help Target
 help:
@@ -213,15 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... nm_otool"
+	@echo "... ft_archive.o"
+	@echo "... ft_archive.i"
+	@echo "... ft_archive.s"
 	@echo "... ft_extract_file.o"
 	@echo "... ft_extract_file.i"
 	@echo "... ft_extract_file.s"
 	@echo "... ft_nm.o"
 	@echo "... ft_nm.i"
 	@echo "... ft_nm.s"
-	@echo "... ft_read_mach.o"
-	@echo "... ft_read_mach.i"
-	@echo "... ft_read_mach.s"
+	@echo "... ft_otool.o"
+	@echo "... ft_otool.i"
+	@echo "... ft_otool.s"
+	@echo "... ft_read_mach_64.o"
+	@echo "... ft_read_mach_64.i"
+	@echo "... ft_read_mach_64.s"
+	@echo "... ft_read_march_32.o"
+	@echo "... ft_read_march_32.i"
+	@echo "... ft_read_march_32.s"
 .PHONY : help
 
 

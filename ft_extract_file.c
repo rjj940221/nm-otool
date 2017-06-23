@@ -27,7 +27,7 @@ void print_bytes(const void *object, size_t size)
 	putchar('\n');
 }
 
-void ft_extract_file(void *data)
+void ft_extract_file(void *data, t_ofile *ofile)
 {
 	uint32_t magic;
 
@@ -42,12 +42,16 @@ void ft_extract_file(void *data)
 	}
 	if (magic == MACH_CIGAM || magic == MACH_MAGIC) {
 		puts("mach file");
-		ft_read_mach(data);
+		//ft_read_mach(data);
 		return ;
 	}
 	if (magic == MACH_CIGAM_64 || magic == MACH_MAGIC_64) {
 		puts("mach 64 file");
-		ft_read_mach_64(data);
+		ft_read_mach_64(data, ofile);
+		return ;
+	}
+	if (strncmp(data, "!<arch>", 7) == 0) {
+		puts("got archve");
 		return ;
 	}
 	puts("unkowen file type");

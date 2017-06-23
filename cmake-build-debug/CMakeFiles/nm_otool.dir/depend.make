@@ -12,8 +12,8 @@ CMakeFiles/nm_otool.dir/ft_nm.c.o: ../Includes/nm-otool.h
 CMakeFiles/nm_otool.dir/ft_nm.c.o: ../ft_nm.c
 CMakeFiles/nm_otool.dir/ft_nm.c.o: ../libft/libft.h
 
-CMakeFiles/nm_otool.dir/ft_read_mach.c.o: ../Includes/mach.h
-CMakeFiles/nm_otool.dir/ft_read_mach.c.o: ../Includes/mach_64.h
-CMakeFiles/nm_otool.dir/ft_read_mach.c.o: ../Includes/nm-otool.h
-CMakeFiles/nm_otool.dir/ft_read_mach.c.o: ../ft_read_mach.c
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o: ../Includes/mach.h
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o: ../Includes/mach_64.h
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o: ../Includes/nm-otool.h
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o: ../ft_read_mach_64.c
 

@@ -105,45 +105,123 @@ CMakeFiles/nm_otool.dir/ft_extract_file.c.o.provides: CMakeFiles/nm_otool.dir/ft
 CMakeFiles/nm_otool.dir/ft_extract_file.c.o.provides.build: CMakeFiles/nm_otool.dir/ft_extract_file.c.o
 
 
-CMakeFiles/nm_otool.dir/ft_read_mach.c.o: CMakeFiles/nm_otool.dir/flags.make
-CMakeFiles/nm_otool.dir/ft_read_mach.c.o: ../ft_read_mach.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/nm_otool.dir/ft_read_mach.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/nm_otool.dir/ft_read_mach.c.o   -c /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach.c
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o: CMakeFiles/nm_otool.dir/flags.make
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o: ../ft_read_mach_64.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o   -c /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach_64.c
 
-CMakeFiles/nm_otool.dir/ft_read_mach.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nm_otool.dir/ft_read_mach.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach.c > CMakeFiles/nm_otool.dir/ft_read_mach.c.i
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nm_otool.dir/ft_read_mach_64.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach_64.c > CMakeFiles/nm_otool.dir/ft_read_mach_64.c.i
 
-CMakeFiles/nm_otool.dir/ft_read_mach.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nm_otool.dir/ft_read_mach.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach.c -o CMakeFiles/nm_otool.dir/ft_read_mach.c.s
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nm_otool.dir/ft_read_mach_64.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach_64.c -o CMakeFiles/nm_otool.dir/ft_read_mach_64.c.s
 
-CMakeFiles/nm_otool.dir/ft_read_mach.c.o.requires:
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o.requires:
 
-.PHONY : CMakeFiles/nm_otool.dir/ft_read_mach.c.o.requires
+.PHONY : CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o.requires
 
-CMakeFiles/nm_otool.dir/ft_read_mach.c.o.provides: CMakeFiles/nm_otool.dir/ft_read_mach.c.o.requires
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach.c.o.provides.build
-.PHONY : CMakeFiles/nm_otool.dir/ft_read_mach.c.o.provides
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o.provides: CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o.requires
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o.provides.build
+.PHONY : CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o.provides
 
-CMakeFiles/nm_otool.dir/ft_read_mach.c.o.provides.build: CMakeFiles/nm_otool.dir/ft_read_mach.c.o
+CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o.provides.build: CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o
+
+
+CMakeFiles/nm_otool.dir/ft_read_march_32.c.o: CMakeFiles/nm_otool.dir/flags.make
+CMakeFiles/nm_otool.dir/ft_read_march_32.c.o: ../ft_read_march_32.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/nm_otool.dir/ft_read_march_32.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/nm_otool.dir/ft_read_march_32.c.o   -c /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_march_32.c
+
+CMakeFiles/nm_otool.dir/ft_read_march_32.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nm_otool.dir/ft_read_march_32.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_march_32.c > CMakeFiles/nm_otool.dir/ft_read_march_32.c.i
+
+CMakeFiles/nm_otool.dir/ft_read_march_32.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nm_otool.dir/ft_read_march_32.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_march_32.c -o CMakeFiles/nm_otool.dir/ft_read_march_32.c.s
+
+CMakeFiles/nm_otool.dir/ft_read_march_32.c.o.requires:
+
+.PHONY : CMakeFiles/nm_otool.dir/ft_read_march_32.c.o.requires
+
+CMakeFiles/nm_otool.dir/ft_read_march_32.c.o.provides: CMakeFiles/nm_otool.dir/ft_read_march_32.c.o.requires
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_march_32.c.o.provides.build
+.PHONY : CMakeFiles/nm_otool.dir/ft_read_march_32.c.o.provides
+
+CMakeFiles/nm_otool.dir/ft_read_march_32.c.o.provides.build: CMakeFiles/nm_otool.dir/ft_read_march_32.c.o
+
+
+CMakeFiles/nm_otool.dir/ft_otool.c.o: CMakeFiles/nm_otool.dir/flags.make
+CMakeFiles/nm_otool.dir/ft_otool.c.o: ../ft_otool.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/nm_otool.dir/ft_otool.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/nm_otool.dir/ft_otool.c.o   -c /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_otool.c
+
+CMakeFiles/nm_otool.dir/ft_otool.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nm_otool.dir/ft_otool.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_otool.c > CMakeFiles/nm_otool.dir/ft_otool.c.i
+
+CMakeFiles/nm_otool.dir/ft_otool.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nm_otool.dir/ft_otool.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_otool.c -o CMakeFiles/nm_otool.dir/ft_otool.c.s
+
+CMakeFiles/nm_otool.dir/ft_otool.c.o.requires:
+
+.PHONY : CMakeFiles/nm_otool.dir/ft_otool.c.o.requires
+
+CMakeFiles/nm_otool.dir/ft_otool.c.o.provides: CMakeFiles/nm_otool.dir/ft_otool.c.o.requires
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_otool.c.o.provides.build
+.PHONY : CMakeFiles/nm_otool.dir/ft_otool.c.o.provides
+
+CMakeFiles/nm_otool.dir/ft_otool.c.o.provides.build: CMakeFiles/nm_otool.dir/ft_otool.c.o
+
+
+CMakeFiles/nm_otool.dir/ft_archive.c.o: CMakeFiles/nm_otool.dir/flags.make
+CMakeFiles/nm_otool.dir/ft_archive.c.o: ../ft_archive.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/nm_otool.dir/ft_archive.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/nm_otool.dir/ft_archive.c.o   -c /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_archive.c
+
+CMakeFiles/nm_otool.dir/ft_archive.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nm_otool.dir/ft_archive.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_archive.c > CMakeFiles/nm_otool.dir/ft_archive.c.i
+
+CMakeFiles/nm_otool.dir/ft_archive.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nm_otool.dir/ft_archive.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_archive.c -o CMakeFiles/nm_otool.dir/ft_archive.c.s
+
+CMakeFiles/nm_otool.dir/ft_archive.c.o.requires:
+
+.PHONY : CMakeFiles/nm_otool.dir/ft_archive.c.o.requires
+
+CMakeFiles/nm_otool.dir/ft_archive.c.o.provides: CMakeFiles/nm_otool.dir/ft_archive.c.o.requires
+	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_archive.c.o.provides.build
+.PHONY : CMakeFiles/nm_otool.dir/ft_archive.c.o.provides
+
+CMakeFiles/nm_otool.dir/ft_archive.c.o.provides.build: CMakeFiles/nm_otool.dir/ft_archive.c.o
 
 
 # Object files for target nm_otool
 nm_otool_OBJECTS = \
 "CMakeFiles/nm_otool.dir/ft_nm.c.o" \
 "CMakeFiles/nm_otool.dir/ft_extract_file.c.o" \
-"CMakeFiles/nm_otool.dir/ft_read_mach.c.o"
+"CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o" \
+"CMakeFiles/nm_otool.dir/ft_read_march_32.c.o" \
+"CMakeFiles/nm_otool.dir/ft_otool.c.o" \
+"CMakeFiles/nm_otool.dir/ft_archive.c.o"
 
 # External object files for target nm_otool
 nm_otool_EXTERNAL_OBJECTS =
 
 nm_otool: CMakeFiles/nm_otool.dir/ft_nm.c.o
 nm_otool: CMakeFiles/nm_otool.dir/ft_extract_file.c.o
-nm_otool: CMakeFiles/nm_otool.dir/ft_read_mach.c.o
+nm_otool: CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o
+nm_otool: CMakeFiles/nm_otool.dir/ft_read_march_32.c.o
+nm_otool: CMakeFiles/nm_otool.dir/ft_otool.c.o
+nm_otool: CMakeFiles/nm_otool.dir/ft_archive.c.o
 nm_otool: CMakeFiles/nm_otool.dir/build.make
 nm_otool: CMakeFiles/nm_otool.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable nm_otool"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable nm_otool"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nm_otool.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,7 +231,10 @@ CMakeFiles/nm_otool.dir/build: nm_otool
 
 CMakeFiles/nm_otool.dir/requires: CMakeFiles/nm_otool.dir/ft_nm.c.o.requires
 CMakeFiles/nm_otool.dir/requires: CMakeFiles/nm_otool.dir/ft_extract_file.c.o.requires
-CMakeFiles/nm_otool.dir/requires: CMakeFiles/nm_otool.dir/ft_read_mach.c.o.requires
+CMakeFiles/nm_otool.dir/requires: CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o.requires
+CMakeFiles/nm_otool.dir/requires: CMakeFiles/nm_otool.dir/ft_read_march_32.c.o.requires
+CMakeFiles/nm_otool.dir/requires: CMakeFiles/nm_otool.dir/ft_otool.c.o.requires
+CMakeFiles/nm_otool.dir/requires: CMakeFiles/nm_otool.dir/ft_archive.c.o.requires
 
 .PHONY : CMakeFiles/nm_otool.dir/requires
 

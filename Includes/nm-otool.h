@@ -21,10 +21,25 @@
 # define FAT_CIGAM  		0xbebafeca
 # define ELF_MAGIC  		0x7f454c46
 
+typedef struct	s_sym_tab
+{
+	char		*symname;
+	char 		symbol;
+	uint64_t	ofset;
+}				t_sym_tab;
+
 typedef struct 	s_ofile{
-	int lc_segment;
-	int lc_symtab;
-	int lc_dysymtab;
+	void		*text_sections;
+	uint64_t	text_section_size;
+	//void		*ptr_lc_segment;
+	//void		*ptr_lc_symtab;
+	//void 		*ptr_lc_dysymtab;
+	int			lc_segment;
+	//int			lc_symtab;
+	//int 		lc_dysymtab;
+	t_sym_tab	*sym_tab;
+	int 		num_sym;
+	uint8_t 	is_big_end;
 }				t_ofile;
 
 struct section
@@ -44,7 +59,7 @@ struct section
 
 void print_bytes(const void *object, size_t size);
 
-void ft_extract_file(void *data);
+void ft_extract_file(void *data, t_ofile *ofile);
 void ft_read_mach(void *data);
-void ft_read_mach_64(void *data);
+void ft_read_mach_64(void *data, t_ofile *ofile);
 #endif

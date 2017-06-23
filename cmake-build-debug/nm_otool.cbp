@@ -89,13 +89,22 @@
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/nm-otool.h">
 			<Option target="nm_otool"/>
 		</Unit>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_archive.c">
+			<Option target="nm_otool"/>
+		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_extract_file.c">
 			<Option target="nm_otool"/>
 		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_nm.c">
 			<Option target="nm_otool"/>
 		</Unit>
-		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach.c">
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_otool.c">
+			<Option target="nm_otool"/>
+		</Unit>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach_64.c">
+			<Option target="nm_otool"/>
+		</Unit>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_march_32.c">
 			<Option target="nm_otool"/>
 		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/CMakeLists.txt">
