@@ -42,6 +42,16 @@ typedef struct 	s_ofile{
 	uint8_t 	is_big_end;
 }				t_ofile;
 
+typedef struct	s_ar_header{
+	char	file_id[16];
+	char	file_mod_time[12];
+	char	owner_id[6];
+	char	group_id[6];
+	char	file_mode[8];
+	char 	size[10];
+	char 	end[2];
+}				t_ar_header;
+
 struct section
 {
 	char sectname[16];

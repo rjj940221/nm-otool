@@ -2,6 +2,38 @@
 #include "Includes/nm-otool.h"
 #include <sys/mman.h>
 
+uint32_t get_magic(void *data){
+	uint32_t magic;
+
+	memcpy(&magic, data, sizeof(uint32_t));
+	return magic;
+}
+
+void choose_method(void *data){
+	uint32_t magic;
+	t_ofile		ofile;
+
+	magic = get_magic(data);
+	if (magic == FAT_CIGAM || magic == FAT_MAGIC) {
+		puts("fat file");
+		return ;
+	}
+	if (magic == MACH_CIGAM || magic == MACH_MAGIC) {
+		puts("mach file");
+		//ft_read_mach(data);
+		return ;
+	}
+	if (magic == MACH_CIGAM_64 || magic == MACH_MAGIC_64) {
+		ft_read_mach_64(data, &ofile);
+		return ;
+	}
+	if (strncmp(data, "!<arch>", 7) == 0) {
+		puts("got archve");
+		return ;
+	}
+	puts("unkowen file type");
+}
+
 void ft_printnm(t_ofile *ofile){
 	int	i;
 
@@ -41,7 +73,7 @@ void ft_nm(char *file)
 		close(fd);
 	}
 	else
-		printf("nm: '%s': No such file", file);	
+		printf("ft_nm: '%s': No such file", file);
 }
 
 int main (int ac, char **av){
