@@ -37,8 +37,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="nm_otool">
-				<Option output="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/nm_otool" prefix_auto="0" extension_auto="0"/>
+			<Target title="ft_otool">
+				<Option output="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/ft_otool" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -52,14 +52,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 nm_otool"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_otool"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="nm_otool/fast">
-				<Option output="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/nm_otool" prefix_auto="0" extension_auto="0"/>
+			<Target title="ft_otool/fast">
+				<Option output="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/ft_otool" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -73,39 +73,112 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 nm_otool/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_otool/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ft_nm">
+				<Option output="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/ft_nm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.3.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_nm"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ft_nm/fast">
+				<Option output="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/ft_nm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.3.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_nm/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/fat.h">
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
+		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/mach.h">
-			<Option target="nm_otool"/>
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
+		</Unit>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/mach_32.h">
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
 		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/mach_64.h">
-			<Option target="nm_otool"/>
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
 		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/nm-otool.h">
-			<Option target="nm_otool"/>
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
 		</Unit>
-		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_archive.c">
-			<Option target="nm_otool"/>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/fat.c">
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
 		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_extract_file.c">
-			<Option target="nm_otool"/>
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
 		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_nm.c">
-			<Option target="nm_otool"/>
+			<Option target="ft_nm"/>
 		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_otool.c">
-			<Option target="nm_otool"/>
+			<Option target="ft_otool"/>
+		</Unit>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach_32.c">
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
 		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach_64.c">
-			<Option target="nm_otool"/>
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
 		</Unit>
-		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_march_32.c">
-			<Option target="nm_otool"/>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/mach.c">
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
+		</Unit>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/revirce_fat.c">
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
+		</Unit>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/revirce_mach_32.c">
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
+		</Unit>
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/revirce_mach_64.c">
+			<Option target="ft_otool"/>
+			<Option target="ft_nm"/>
 		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

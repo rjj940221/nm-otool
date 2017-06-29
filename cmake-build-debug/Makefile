@@ -111,44 +111,60 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named nm_otool
+# Target rules for targets named ft_otool
 
 # Build rule for target.
-nm_otool: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nm_otool
-.PHONY : nm_otool
+ft_otool: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ft_otool
+.PHONY : ft_otool
 
 # fast build rule for target.
-nm_otool/fast:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/build
-.PHONY : nm_otool/fast
+ft_otool/fast:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/build
+.PHONY : ft_otool/fast
 
-ft_archive.o: ft_archive.c.o
+#=============================================================================
+# Target rules for targets named ft_nm
 
-.PHONY : ft_archive.o
+# Build rule for target.
+ft_nm: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ft_nm
+.PHONY : ft_nm
+
+# fast build rule for target.
+ft_nm/fast:
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/build
+.PHONY : ft_nm/fast
+
+fat.o: fat.c.o
+
+.PHONY : fat.o
 
 # target to build an object file
-ft_archive.c.o:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_archive.c.o
-.PHONY : ft_archive.c.o
+fat.c.o:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/fat.c.o
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/fat.c.o
+.PHONY : fat.c.o
 
-ft_archive.i: ft_archive.c.i
+fat.i: fat.c.i
 
-.PHONY : ft_archive.i
+.PHONY : fat.i
 
 # target to preprocess a source file
-ft_archive.c.i:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_archive.c.i
-.PHONY : ft_archive.c.i
+fat.c.i:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/fat.c.i
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/fat.c.i
+.PHONY : fat.c.i
 
-ft_archive.s: ft_archive.c.s
+fat.s: fat.c.s
 
-.PHONY : ft_archive.s
+.PHONY : fat.s
 
 # target to generate assembly for a file
-ft_archive.c.s:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_archive.c.s
-.PHONY : ft_archive.c.s
+fat.c.s:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/fat.c.s
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/fat.c.s
+.PHONY : fat.c.s
 
 ft_extract_file.o: ft_extract_file.c.o
 
@@ -156,7 +172,8 @@ ft_extract_file.o: ft_extract_file.c.o
 
 # target to build an object file
 ft_extract_file.c.o:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_extract_file.c.o
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_extract_file.c.o
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_extract_file.c.o
 .PHONY : ft_extract_file.c.o
 
 ft_extract_file.i: ft_extract_file.c.i
@@ -165,7 +182,8 @@ ft_extract_file.i: ft_extract_file.c.i
 
 # target to preprocess a source file
 ft_extract_file.c.i:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_extract_file.c.i
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_extract_file.c.i
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_extract_file.c.i
 .PHONY : ft_extract_file.c.i
 
 ft_extract_file.s: ft_extract_file.c.s
@@ -174,7 +192,8 @@ ft_extract_file.s: ft_extract_file.c.s
 
 # target to generate assembly for a file
 ft_extract_file.c.s:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_extract_file.c.s
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_extract_file.c.s
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_extract_file.c.s
 .PHONY : ft_extract_file.c.s
 
 ft_nm.o: ft_nm.c.o
@@ -183,7 +202,7 @@ ft_nm.o: ft_nm.c.o
 
 # target to build an object file
 ft_nm.c.o:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_nm.c.o
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_nm.c.o
 .PHONY : ft_nm.c.o
 
 ft_nm.i: ft_nm.c.i
@@ -192,7 +211,7 @@ ft_nm.i: ft_nm.c.i
 
 # target to preprocess a source file
 ft_nm.c.i:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_nm.c.i
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_nm.c.i
 .PHONY : ft_nm.c.i
 
 ft_nm.s: ft_nm.c.s
@@ -201,7 +220,7 @@ ft_nm.s: ft_nm.c.s
 
 # target to generate assembly for a file
 ft_nm.c.s:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_nm.c.s
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_nm.c.s
 .PHONY : ft_nm.c.s
 
 ft_otool.o: ft_otool.c.o
@@ -210,7 +229,7 @@ ft_otool.o: ft_otool.c.o
 
 # target to build an object file
 ft_otool.c.o:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_otool.c.o
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_otool.c.o
 .PHONY : ft_otool.c.o
 
 ft_otool.i: ft_otool.c.i
@@ -219,7 +238,7 @@ ft_otool.i: ft_otool.c.i
 
 # target to preprocess a source file
 ft_otool.c.i:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_otool.c.i
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_otool.c.i
 .PHONY : ft_otool.c.i
 
 ft_otool.s: ft_otool.c.s
@@ -228,8 +247,38 @@ ft_otool.s: ft_otool.c.s
 
 # target to generate assembly for a file
 ft_otool.c.s:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_otool.c.s
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_otool.c.s
 .PHONY : ft_otool.c.s
+
+ft_read_mach_32.o: ft_read_mach_32.c.o
+
+.PHONY : ft_read_mach_32.o
+
+# target to build an object file
+ft_read_mach_32.c.o:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_read_mach_32.c.o
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_read_mach_32.c.o
+.PHONY : ft_read_mach_32.c.o
+
+ft_read_mach_32.i: ft_read_mach_32.c.i
+
+.PHONY : ft_read_mach_32.i
+
+# target to preprocess a source file
+ft_read_mach_32.c.i:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_read_mach_32.c.i
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_read_mach_32.c.i
+.PHONY : ft_read_mach_32.c.i
+
+ft_read_mach_32.s: ft_read_mach_32.c.s
+
+.PHONY : ft_read_mach_32.s
+
+# target to generate assembly for a file
+ft_read_mach_32.c.s:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_read_mach_32.c.s
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_read_mach_32.c.s
+.PHONY : ft_read_mach_32.c.s
 
 ft_read_mach_64.o: ft_read_mach_64.c.o
 
@@ -237,7 +286,8 @@ ft_read_mach_64.o: ft_read_mach_64.c.o
 
 # target to build an object file
 ft_read_mach_64.c.o:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_read_mach_64.c.o
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_read_mach_64.c.o
 .PHONY : ft_read_mach_64.c.o
 
 ft_read_mach_64.i: ft_read_mach_64.c.i
@@ -246,7 +296,8 @@ ft_read_mach_64.i: ft_read_mach_64.c.i
 
 # target to preprocess a source file
 ft_read_mach_64.c.i:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach_64.c.i
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_read_mach_64.c.i
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_read_mach_64.c.i
 .PHONY : ft_read_mach_64.c.i
 
 ft_read_mach_64.s: ft_read_mach_64.c.s
@@ -255,35 +306,129 @@ ft_read_mach_64.s: ft_read_mach_64.c.s
 
 # target to generate assembly for a file
 ft_read_mach_64.c.s:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_mach_64.c.s
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/ft_read_mach_64.c.s
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/ft_read_mach_64.c.s
 .PHONY : ft_read_mach_64.c.s
 
-ft_read_march_32.o: ft_read_march_32.c.o
+mach.o: mach.c.o
 
-.PHONY : ft_read_march_32.o
+.PHONY : mach.o
 
 # target to build an object file
-ft_read_march_32.c.o:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_march_32.c.o
-.PHONY : ft_read_march_32.c.o
+mach.c.o:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/mach.c.o
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/mach.c.o
+.PHONY : mach.c.o
 
-ft_read_march_32.i: ft_read_march_32.c.i
+mach.i: mach.c.i
 
-.PHONY : ft_read_march_32.i
+.PHONY : mach.i
 
 # target to preprocess a source file
-ft_read_march_32.c.i:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_march_32.c.i
-.PHONY : ft_read_march_32.c.i
+mach.c.i:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/mach.c.i
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/mach.c.i
+.PHONY : mach.c.i
 
-ft_read_march_32.s: ft_read_march_32.c.s
+mach.s: mach.c.s
 
-.PHONY : ft_read_march_32.s
+.PHONY : mach.s
 
 # target to generate assembly for a file
-ft_read_march_32.c.s:
-	$(MAKE) -f CMakeFiles/nm_otool.dir/build.make CMakeFiles/nm_otool.dir/ft_read_march_32.c.s
-.PHONY : ft_read_march_32.c.s
+mach.c.s:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/mach.c.s
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/mach.c.s
+.PHONY : mach.c.s
+
+revirce_fat.o: revirce_fat.c.o
+
+.PHONY : revirce_fat.o
+
+# target to build an object file
+revirce_fat.c.o:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/revirce_fat.c.o
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/revirce_fat.c.o
+.PHONY : revirce_fat.c.o
+
+revirce_fat.i: revirce_fat.c.i
+
+.PHONY : revirce_fat.i
+
+# target to preprocess a source file
+revirce_fat.c.i:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/revirce_fat.c.i
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/revirce_fat.c.i
+.PHONY : revirce_fat.c.i
+
+revirce_fat.s: revirce_fat.c.s
+
+.PHONY : revirce_fat.s
+
+# target to generate assembly for a file
+revirce_fat.c.s:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/revirce_fat.c.s
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/revirce_fat.c.s
+.PHONY : revirce_fat.c.s
+
+revirce_mach_32.o: revirce_mach_32.c.o
+
+.PHONY : revirce_mach_32.o
+
+# target to build an object file
+revirce_mach_32.c.o:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/revirce_mach_32.c.o
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/revirce_mach_32.c.o
+.PHONY : revirce_mach_32.c.o
+
+revirce_mach_32.i: revirce_mach_32.c.i
+
+.PHONY : revirce_mach_32.i
+
+# target to preprocess a source file
+revirce_mach_32.c.i:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/revirce_mach_32.c.i
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/revirce_mach_32.c.i
+.PHONY : revirce_mach_32.c.i
+
+revirce_mach_32.s: revirce_mach_32.c.s
+
+.PHONY : revirce_mach_32.s
+
+# target to generate assembly for a file
+revirce_mach_32.c.s:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/revirce_mach_32.c.s
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/revirce_mach_32.c.s
+.PHONY : revirce_mach_32.c.s
+
+revirce_mach_64.o: revirce_mach_64.c.o
+
+.PHONY : revirce_mach_64.o
+
+# target to build an object file
+revirce_mach_64.c.o:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/revirce_mach_64.c.o
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/revirce_mach_64.c.o
+.PHONY : revirce_mach_64.c.o
+
+revirce_mach_64.i: revirce_mach_64.c.i
+
+.PHONY : revirce_mach_64.i
+
+# target to preprocess a source file
+revirce_mach_64.c.i:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/revirce_mach_64.c.i
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/revirce_mach_64.c.i
+.PHONY : revirce_mach_64.c.i
+
+revirce_mach_64.s: revirce_mach_64.c.s
+
+.PHONY : revirce_mach_64.s
+
+# target to generate assembly for a file
+revirce_mach_64.c.s:
+	$(MAKE) -f CMakeFiles/ft_otool.dir/build.make CMakeFiles/ft_otool.dir/revirce_mach_64.c.s
+	$(MAKE) -f CMakeFiles/ft_nm.dir/build.make CMakeFiles/ft_nm.dir/revirce_mach_64.c.s
+.PHONY : revirce_mach_64.c.s
 
 # Help Target
 help:
@@ -293,10 +438,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... nm_otool"
-	@echo "... ft_archive.o"
-	@echo "... ft_archive.i"
-	@echo "... ft_archive.s"
+	@echo "... ft_otool"
+	@echo "... ft_nm"
+	@echo "... fat.o"
+	@echo "... fat.i"
+	@echo "... fat.s"
 	@echo "... ft_extract_file.o"
 	@echo "... ft_extract_file.i"
 	@echo "... ft_extract_file.s"
@@ -306,12 +452,24 @@ help:
 	@echo "... ft_otool.o"
 	@echo "... ft_otool.i"
 	@echo "... ft_otool.s"
+	@echo "... ft_read_mach_32.o"
+	@echo "... ft_read_mach_32.i"
+	@echo "... ft_read_mach_32.s"
 	@echo "... ft_read_mach_64.o"
 	@echo "... ft_read_mach_64.i"
 	@echo "... ft_read_mach_64.s"
-	@echo "... ft_read_march_32.o"
-	@echo "... ft_read_march_32.i"
-	@echo "... ft_read_march_32.s"
+	@echo "... mach.o"
+	@echo "... mach.i"
+	@echo "... mach.s"
+	@echo "... revirce_fat.o"
+	@echo "... revirce_fat.i"
+	@echo "... revirce_fat.s"
+	@echo "... revirce_mach_32.o"
+	@echo "... revirce_mach_32.i"
+	@echo "... revirce_mach_32.s"
+	@echo "... revirce_mach_64.o"
+	@echo "... revirce_mach_64.i"
+	@echo "... revirce_mach_64.s"
 .PHONY : help
 
 

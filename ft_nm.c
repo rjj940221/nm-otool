@@ -1,90 +1,90 @@
+#include <stdlib.h>
 #include "libft/libft.h"
 #include "Includes/nm-otool.h"
-#include <sys/mman.h>
 
-uint32_t get_magic(void *data){
-	uint32_t magic;
-
-	memcpy(&magic, data, sizeof(uint32_t));
-	return magic;
-}
-
-void choose_method(void *data){
-	uint32_t magic;
-	t_ofile		ofile;
-
-	magic = get_magic(data);
-	if (magic == FAT_CIGAM || magic == FAT_MAGIC) {
-		puts("fat file");
-		return ;
-	}
-	if (magic == MACH_CIGAM || magic == MACH_MAGIC) {
-		puts("mach file");
-		//ft_read_mach(data);
-		return ;
-	}
-	if (magic == MACH_CIGAM_64 || magic == MACH_MAGIC_64) {
-		ft_read_mach_64(data, &ofile);
-		return ;
-	}
-	if (strncmp(data, "!<arch>", 7) == 0) {
-		puts("got archve");
-		return ;
-	}
-	puts("unkowen file type");
-}
-
-void ft_printnm(t_ofile *ofile){
+void ft_printnm(t_filegroup *gfile){
 	int	i;
+	int j;
 
-	i = -1;
-	while (++i < ofile->num_sym)
+
+	j = -1;
+	while (++j < gfile->num_ofiles)
 	{
-		if (ofile->sym_tab[i].symbol == 'u' || ofile->sym_tab[i].symbol == 'U')
-			printf("\t\t %c %s\n", ofile->sym_tab[i].symbol, ofile->sym_tab[i].symname);
-		else
-			printf("%016x %c %s\n", (unsigned int) ofile->sym_tab[i].ofset, ofile->sym_tab[i].symbol, ofile->sym_tab[i].symname);
+		i = -1;
+		while (++i < gfile->ofiles[j].num_sym) {
+			if (gfile->ofiles[j].sym_tab[i].symbol == 'u' || gfile->ofiles[j].sym_tab[i].symbol == 'U')
+				printf("                 %c %s\n", gfile->ofiles[j].sym_tab[i].symbol, gfile->ofiles[j].sym_tab[i].symname);
+			else
+				printf("%016x %c %s\n", (unsigned int) gfile->ofiles[j].sym_tab[i].ofset, gfile->ofiles[j].sym_tab[i].symbol,
+					   gfile->ofiles[j].sym_tab[i].symname);
+		}
 	}
 }
 
-void ft_nm(char *file)
-{
-	int			fd;
-	struct stat	buf;
-	void		*data;
-	t_ofile		ofile;
+void ft_nm_archive_print(void *data,  char *archive, char *file){
+	t_filegroup	gfile;
 
-	ofile = (t_ofile){NULL, 0, -1, NULL, 0, FALSE};
-	if ((fd = open(file, O_RDONLY)) != -1)
+	gfile = (t_filegroup){0, NULL};
+	ft_extract_file(data, &gfile);
+	printf("%s(%s):\n",archive, file);
+	ft_printnm(&gfile);
+}
+
+void ft_nm_archive(char *archive, void *data, size_t size){
+	size_t      offset;
+	t_ar_header header;
+	char        *file;
+	int         file_name_size;
+
+	offset = 8;
+	while (offset < size)
 	{
-		if (fstat(fd, &buf) == -1 || buf.st_size == 0)
-			puts("Could not get file propertys.\n");
+		file_name_size = 0;
+		memcpy(&header, data + offset, sizeof(header));
+		offset += sizeof(header);
+		if (strncmp(header.file_id, "#1/", 3) == 0)
+		{
+			file_name_size = atoi(header.file_id+ 3);
+			file = ft_strtrim(data + offset);
+			offset += file_name_size;
+		}
+		else
+			file = ft_strtrim(header.file_id);
+		if (strcmp(file, "__.SYMDEF SORTED"))
+			ft_nm_archive_print(data + offset,archive,file);
+		free(file);
+		offset += (atoi(header.size) - file_name_size);
+	}
+}
+
+void ft_nm(char *file, int print_file){
+	void    	*data;
+	t_filegroup	gfile;
+	size_t  	size;
+
+	if((data = get_file_data(file, &size)) != NULL)
+	{
+		if (strncmp(data, "!<arch>", 7) == 0)
+			ft_nm_archive(file, data, size);
 		else
 		{
-			if ((data = mmap(0, (size_t)buf.st_size, PROT_READ, MAP_SHARED, fd, 0))
-				== MAP_FAILED)
-				puts("Could not read file.\n");
-			else
-			{
-				ft_extract_file(data, &ofile);
-				ft_printnm(&ofile);
-			}
+			ft_extract_file(data, &gfile);
+			if (print_file != 0)
+				printf("%s:\n", file);
+			ft_printnm(&gfile);
 		}
-		close(fd);
 	}
-	else
-		printf("ft_nm: '%s': No such file", file);
 }
 
 int main (int ac, char **av){
 	int	i;
 
 	if (ac == 1)
-		ft_nm("a.out");
+		ft_nm("a.out", 0);
 	else
 	{
 		i = 0;
 		while (++i < ac)
-			ft_nm(av[i]);
+			ft_nm(av[i], ac - 1);
 	}
 }

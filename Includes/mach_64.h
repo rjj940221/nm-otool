@@ -8,41 +8,40 @@
 #include <stdint.h>
 #include <mach/machine.h>
 #include <mach/vm_prot.h>
+#include "mach.h"
+
 
 # define MACH_MAGIC_64			0xfeedfacf
 # define MACH_CIGAM_64			0xcffaedfe
 # define MACH_64_HEADER_SIZE	32
 
-struct load_command
-{
-	uint32_t cmd;
-	uint32_t cmdsize;
-};
 
-struct nlist_64 {
-	union {
+
+typedef struct s_nlist_64 {
+	union
+	{
 		uint32_t  n_strx; /* index into the string table */
-	} n_un;
-	uint8_t n_type;        /* type flag, see below */
-	uint8_t n_sect;        /* section number or NO_SECT */
-	uint16_t n_desc;       /* see <mach-o/stab.h> */
-	uint64_t n_value;      /* value of this symbol (or stab offset) */
-};
+	} 			n_un;
+	uint8_t		n_type;        /* type flag, see below */
+	uint8_t		n_sect;        /* section number or NO_SECT */
+	uint16_t	n_desc;       /* see <mach-o/stab.h> */
+	uint64_t	n_value;      /* value of this symbol (or stab offset) */
+}               t_nlist_64;
 
-struct mach_header_64 {
-	uint32_t	magic;		/* mach magic number identifier */
-	cpu_type_t	cputype;	/* cpu specifier */
+typedef struct  s_mach_header_64 {
+	uint32_t		magic;		/* mach magic number identifier */
+	cpu_type_t		cputype;	/* cpu specifier */
 	cpu_subtype_t	cpusubtype;	/* machine specifier */
-	uint32_t	filetype;	/* type of file */
-	uint32_t	ncmds;		/* number of load commands */
-	uint32_t	sizeofcmds;	/* the size of all the load commands */
-	uint32_t	flags;		/* flags */
-	uint32_t	reserved;	/* reserved */
-};
+	uint32_t		filetype;	/* type of file */
+	uint32_t		ncmds;		/* number of load commands */
+	uint32_t		sizeofcmds;	/* the size of all the load commands */
+	uint32_t		flags;		/* flags */
+	uint32_t		reserved;	/* reserved */
+}               t_mach_64;
 
-struct segment_command_64 { /* for 64-bit architectures */
+typedef struct  s_segment_command_64 { /* for 64-bit architectures */
 	uint32_t	cmd;		/* LC_SEGMENT_64 */
-	uint32_t	cmdsize;	/* includes sizeof section_64 structs */
+	uint32_t	cmdsize;	/* includes sizeof s_section_64 structs */
 	char		segname[16];	/* segment name */
 	uint64_t	vmaddr;		/* memory address of this segment */
 	uint64_t	vmsize;		/* memory size of this segment */
@@ -52,9 +51,9 @@ struct segment_command_64 { /* for 64-bit architectures */
 	vm_prot_t	initprot;	/* initial VM protection */
 	uint32_t	nsects;		/* number of sections in segment */
 	uint32_t	flags;		/* flags */
-};
+}               t_seg_cmd_64;
 
-struct section_64 { /* for 64-bit architectures */
+typedef struct  s_section_64 { /* for 64-bit architectures */
 	char		sectname[16];	/* name of this section */
 	char		segname[16];	/* segment this section goes in */
 	uint64_t	addr;		/* memory address of this section */
@@ -67,38 +66,15 @@ struct section_64 { /* for 64-bit architectures */
 	uint32_t	reserved1;	/* reserved (for offset or index) */
 	uint32_t	reserved2;	/* reserved (for count or sizeof) */
 	uint32_t	reserved3;	/* reserved */
-};
+}               t_section_64;
 
-struct symtab_command {
-	uint32_t	cmd;		/* LC_SYMTAB */
-	uint32_t	cmdsize;	/* sizeof(struct symtab_command) */
-	uint32_t	symoff;		/* symbol table offset */
-	uint32_t	nsyms;		/* number of symbol table entries */
-	uint32_t	stroff;		/* string table offset */
-	uint32_t	strsize;	/* string table size in bytes */
-};
 
-struct dysymtab_command {
-	uint32_t	cmd;			/* LC_DYSYMTAB */
-	uint32_t	cmdsize;		/* sizeof(struct dysymtab_command) */
-	uint32_t	ilocalsym;		/* index to local symbols */
-	uint32_t	nlocalsym;		/* number of local symbols */
-	uint32_t	iextdefsym;		/* index to externally defined symbols */
-	uint32_t	nextdefsym;		/* number of externally defined symbols */
-	uint32_t	iundefsym;		/* index to undefined symbols */
-	uint32_t	nundefsym;		/* number of undefined symbols */
-	uint32_t	tocoff;			/* file offset to table of contents */
-	uint32_t	ntoc;			/* number of entries in table of contents */
-	uint32_t	modtaboff;		/* file offset to module table */
-	uint32_t	nmodtab;		/* number of module table entries */
-	uint32_t	extrefsymoff;	/* offset to referenced symbol table */
-	uint32_t	nextrefsyms;	/* number of referenced symbol table entries */
-	uint32_t	indirectsymoff; /* file offset to the indirect symbol table */
-	uint32_t	nindirectsyms;  /* number of indirect symbol table entries */
-	uint32_t	extreloff;		/* offset to external relocation entries */
-	uint32_t	nextrel;		/* number of external relocation entries */
-	uint32_t	locreloff;		/* offset to local relocation entries */
-	uint32_t	nlocrel;		/* number of local relocation entries */
 
-};
+void    ft_revirce_nlist_64(t_nlist_64 *nls);
+void    ft_revirce_mach_heder_64(t_mach_64 *header);
+void    ft_revirce_segment_64(t_seg_cmd_64 *seg);
+void    ft_revirce_section_64(t_section_64 *sec);
+void    ft_revirce_symtab(t_symtab_cmd *symtab);
+int		ft_get_section_offset_64(void *data, int is_big_end, t_nlist_64 *nls);
+
 #endif

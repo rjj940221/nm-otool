@@ -1,3 +1,4 @@
 /nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/edit_cache.dir
-/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/nm_otool.dir
+/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/ft_otool.dir
+/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/ft_nm.dir

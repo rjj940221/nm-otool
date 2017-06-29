@@ -1,9 +1,14 @@
 
 
 
-#include "Includes/nm-otool.h"
 
-uint32_t get_magic(void *data){
+#include "Includes/nm-otool.h"
+#include "Includes/mach_32.h"
+#include "Includes/mach_64.h"
+#include "Includes/fat.h"
+
+uint32_t get_magic(void *data)
+{
 	uint32_t magic;
 
 	memcpy(&magic, data, sizeof(uint32_t));
@@ -27,32 +32,57 @@ void print_bytes(const void *object, size_t size)
 	putchar('\n');
 }
 
-void ft_extract_file(void *data, t_ofile *ofile)
+
+
+void *get_file_data(char *file, size_t *size)
+{
+	int			fd;
+	struct stat	buf;
+	void		*data;
+
+	if ((fd = open(file, O_RDONLY)) != -1)
+	{
+		if (fstat(fd, &buf) == -1)
+			puts("Could not get file propertys.\n");
+		else
+		{
+			*size = (size_t)buf.st_size;
+			if ((data = mmap(0, (size_t)buf.st_size, PROT_READ, MAP_SHARED, fd, 0))	== MAP_FAILED)
+				puts("Could not read file.\n");
+			else
+				return data;
+		}
+		close(fd);
+	} else
+		printf("%s: does not exist", file);
+	return NULL;
+}
+
+void ft_setgfile(t_filegroup *gfile)
+{
+	if ((gfile->ofiles = malloc(sizeof(t_ofile))) == NULL)
+		return ;
+	gfile->num_ofiles = 1;
+
+}
+
+void ft_extract_file(void *data, t_filegroup *gfile)
 {
 	uint32_t magic;
 
 	magic = get_magic(data);
-	if (magic == ELF_MAGIC) {
-		puts("elf file");
-		return ;
+	if (magic == FAT_CIGAM || magic == FAT_MAGIC)
+		ft_read_fat(data, gfile);
+	else if (magic == MACH_CIGAM_32 || magic == MACH_MAGIC_32 || magic == MACH_CIGAM_64 || magic == MACH_MAGIC_64)
+	{
+		ft_setgfile(gfile);
+		if (gfile->ofiles == NULL)
+			return;
+		if (magic == MACH_CIGAM_32 || magic == MACH_MAGIC_32)
+			ft_read_mach_32(data, gfile->ofiles);
+		else
+			ft_read_mach_64(data, gfile->ofiles);
 	}
-	if (magic == FAT_CIGAM || magic == FAT_MAGIC) {
-		puts("fat file");
-		return ;
-	}
-	if (magic == MACH_CIGAM || magic == MACH_MAGIC) {
-		puts("mach file");
-		//ft_read_mach(data);
-		return ;
-	}
-	if (magic == MACH_CIGAM_64 || magic == MACH_MAGIC_64) {
-		puts("mach 64 file");
-		ft_read_mach_64(data, ofile);
-		return ;
-	}
-	if (strncmp(data, "!<arch>", 7) == 0) {
-		puts("got archve");
-		return ;
-	}
-	puts("unkowen file type");
+	else
+		puts("unkowen file type");
 }

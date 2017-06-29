@@ -10,6 +10,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_otool.c" "/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/nm_otool.dir/ft_otool.c.o"
   "/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_mach_64.c" "/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/nm_otool.dir/ft_read_mach_64.c.o"
   "/nfs/zfs-student-6/users/rojones/year2/nm-otool/ft_read_march_32.c" "/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/nm_otool.dir/ft_read_march_32.c.o"
+  "/nfs/zfs-student-6/users/rojones/year2/nm-otool/mach.c" "/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/nm_otool.dir/mach.c.o"
+  "/nfs/zfs-student-6/users/rojones/year2/nm-otool/revirce_mach_32.c" "/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/nm_otool.dir/revirce_mach_32.c.o"
+  "/nfs/zfs-student-6/users/rojones/year2/nm-otool/revirce_mach_64.c" "/nfs/zfs-student-6/users/rojones/year2/nm-otool/cmake-build-debug/CMakeFiles/nm_otool.dir/revirce_mach_64.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
