@@ -1,11 +1,18 @@
-//
-// Created by rojones on 2017/06/28.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   revirce_mach_64.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rojones <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/30 07:39:34 by rojones           #+#    #+#             */
+/*   Updated: 2017/06/30 08:12:42 by rojones          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Includes/mach_64.h"
 
-
-void    ft_revirce_nlist_64(t_nlist_64 *nls)
+void	ft_revirce_nlist_64(t_nlist_64 *nls)
 {
 	revirce_bytes(&nls->n_un.n_strx, sizeof(uint32_t));
 	revirce_bytes(&nls->n_type, sizeof(uint8_t));
@@ -14,7 +21,7 @@ void    ft_revirce_nlist_64(t_nlist_64 *nls)
 	revirce_bytes(&nls->n_value, sizeof(uint64_t));
 }
 
-void    ft_revirce_mach_heder_64(t_mach_64 *header)
+void	ft_revirce_mach_heder_64(t_mach_64 *header)
 {
 	revirce_bytes(&header->cputype, sizeof(cpu_type_t));
 	revirce_bytes(&header->cpusubtype, sizeof(cpu_subtype_t));
@@ -25,7 +32,7 @@ void    ft_revirce_mach_heder_64(t_mach_64 *header)
 	revirce_bytes(&header->reserved, sizeof(uint32_t));
 }
 
-void    ft_revirce_segment_64(t_seg_cmd_64 *seg)
+void	ft_revirce_segment_64(t_seg_cmd_64 *seg)
 {
 	revirce_bytes(&seg->cmd, sizeof(uint32_t));
 	revirce_bytes(&seg->cmdsize, sizeof(uint32_t));
@@ -40,7 +47,7 @@ void    ft_revirce_segment_64(t_seg_cmd_64 *seg)
 	revirce_bytes(&seg->flags, sizeof(uint32_t));
 }
 
-void    ft_revirce_section_64(t_section_64 *sec)
+void	ft_revirce_section_64(t_section_64 *sec)
 {
 	revirce_bytes(&sec->sectname, 16);
 	revirce_bytes(&sec->segname, 16);
@@ -55,4 +62,3 @@ void    ft_revirce_section_64(t_section_64 *sec)
 	revirce_bytes(&sec->reserved2, sizeof(uint32_t));
 	revirce_bytes(&sec->reserved3, sizeof(uint32_t));
 }
-

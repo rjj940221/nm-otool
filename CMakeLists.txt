@@ -7,7 +7,7 @@ set(NM_SOURCE_FILES
         Includes/mach.h
         Includes/mach_32.h
         Includes/mach_64.h
-        Includes/nm-otool.h
+        Includes/nm_otool.h
         Includes/fat.h
         ft_extract_file.c
         ft_nm.c
@@ -23,7 +23,7 @@ set(OTOOL_SOURCE_FILES
         Includes/mach.h
         Includes/mach_32.h
         Includes/mach_64.h
-        Includes/nm-otool.h
+        Includes/nm_otool.h
         Includes/fat.h
         ft_extract_file.c
         ft_otool.c

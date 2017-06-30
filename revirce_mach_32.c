@@ -1,12 +1,18 @@
-//
-// Created by rojones on 2017/06/28.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   revirce_mach_32.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rojones <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/30 07:38:33 by rojones           #+#    #+#             */
+/*   Updated: 2017/06/30 07:39:14 by rojones          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Includes/mach_32.h"
 
-
-
-void    ft_revirce_nlist_32(t_nlist_32 *nls)
+void	ft_revirce_nlist_32(t_nlist_32 *nls)
 {
 	revirce_bytes(&nls->n_un.n_strx, sizeof(uint32_t));
 	revirce_bytes(&nls->n_type, sizeof(uint8_t));
@@ -15,7 +21,7 @@ void    ft_revirce_nlist_32(t_nlist_32 *nls)
 	revirce_bytes(&nls->n_value, sizeof(uint32_t));
 }
 
-void    ft_revirce_mach_heder_32(t_mach_32 *header)
+void	ft_revirce_mach_heder_32(t_mach_32 *header)
 {
 	revirce_bytes(&header->cputype, sizeof(cpu_type_t));
 	revirce_bytes(&header->cpusubtype, sizeof(cpu_subtype_t));
@@ -25,7 +31,7 @@ void    ft_revirce_mach_heder_32(t_mach_32 *header)
 	revirce_bytes(&header->flags, sizeof(uint32_t));
 }
 
-void    ft_revirce_segment_32(t_seg_cmd_32 *seg)
+void	ft_revirce_segment_32(t_seg_cmd_32 *seg)
 {
 	revirce_bytes(&seg->cmd, sizeof(uint32_t));
 	revirce_bytes(&seg->cmdsize, sizeof(uint32_t));
@@ -40,7 +46,7 @@ void    ft_revirce_segment_32(t_seg_cmd_32 *seg)
 	revirce_bytes(&seg->flags, sizeof(uint32_t));
 }
 
-void    ft_revirce_section_32(t_section_32 *sec)
+void	ft_revirce_section_32(t_section_32 *sec)
 {
 	revirce_bytes(&sec->sectname, 16);
 	revirce_bytes(&sec->segname, 16);

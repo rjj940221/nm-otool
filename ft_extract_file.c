@@ -1,40 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_extract_file.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rojones <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/30 06:58:40 by rojones           #+#    #+#             */
+/*   Updated: 2017/06/30 07:57:32 by rojones          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-
-
-#include "Includes/nm-otool.h"
+#include "Includes/nm_otool.h"
 #include "Includes/mach_32.h"
 #include "Includes/mach_64.h"
 #include "Includes/fat.h"
 
-uint32_t get_magic(void *data)
+void		ft_print_line_byts(void *data, size_t size)
 {
-	uint32_t magic;
+	unsigned char	*bytes;
+	int				i;
 
-	memcpy(&magic, data, sizeof(uint32_t));
-	return magic;
-}
-
-void print_bytes(const void *object, size_t size)
-{
-	// This is for C++; in C just drop the static_cast<>() and assign.
-	const unsigned char * const bytes = (const unsigned char *)(object);
-	size_t i;
-
-	for(i = 0; i < size; i++)
+	bytes = (unsigned char *)(data);
+	i = -1;
+	printf("%016x ", 0);
+	while (++i < (int)size)
 	{
 		printf("%02x ", bytes[i]);
-		if ((i + 1) % 8 == 0)
-			putchar(' ');
-		if ((i + 1) % 16 == 0)
+		if ((i + 1) % 16 == 0 && (i + 1) < (int)size)
+		{
 			putchar('\n');
+			printf("%016x ", i);
+		}
 	}
 	putchar('\n');
 }
 
+uint32_t	get_magic(void *data)
+{
+	uint32_t	magic;
 
+	memcpy(&magic, data, sizeof(uint32_t));
+	return (magic);
+}
 
-void *get_file_data(char *file, size_t *size)
+void		*get_file_data(char *file, size_t *size)
 {
 	int			fd;
 	struct stat	buf;
@@ -47,37 +56,39 @@ void *get_file_data(char *file, size_t *size)
 		else
 		{
 			*size = (size_t)buf.st_size;
-			if ((data = mmap(0, (size_t)buf.st_size, PROT_READ, MAP_SHARED, fd, 0))	== MAP_FAILED)
+			if ((data = mmap(0, (size_t)buf.st_size,
+				PROT_READ, MAP_SHARED, fd, 0)) == MAP_FAILED)
 				puts("Could not read file.\n");
 			else
-				return data;
+				return (data);
 		}
 		close(fd);
-	} else
+	}
+	else
 		printf("%s: does not exist", file);
-	return NULL;
+	return (NULL);
 }
 
-void ft_setgfile(t_filegroup *gfile)
+void		ft_setgfile(t_filegroup *gfile)
 {
 	if ((gfile->ofiles = malloc(sizeof(t_ofile))) == NULL)
 		return ;
 	gfile->num_ofiles = 1;
-
 }
 
-void ft_extract_file(void *data, t_filegroup *gfile)
+void		ft_extract_file(void *data, t_filegroup *gfile)
 {
 	uint32_t magic;
 
 	magic = get_magic(data);
 	if (magic == FAT_CIGAM || magic == FAT_MAGIC)
 		ft_read_fat(data, gfile);
-	else if (magic == MACH_CIGAM_32 || magic == MACH_MAGIC_32 || magic == MACH_CIGAM_64 || magic == MACH_MAGIC_64)
+	else if (magic == MACH_CIGAM_32 || magic == MACH_MAGIC_32 ||
+			magic == MACH_CIGAM_64 || magic == MACH_MAGIC_64)
 	{
 		ft_setgfile(gfile);
 		if (gfile->ofiles == NULL)
-			return;
+			return ;
 		if (magic == MACH_CIGAM_32 || magic == MACH_MAGIC_32)
 			ft_read_mach_32(data, gfile->ofiles);
 		else

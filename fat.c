@@ -1,17 +1,25 @@
-//
-// Created by Robert JONES on 2017/06/29.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fat.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rojones <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/30 06:57:19 by rojones           #+#    #+#             */
+/*   Updated: 2017/06/30 07:43:43 by rojones          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "Includes/nm-otool.h"
+#include "Includes/nm_otool.h"
 #include "Includes/fat.h"
 #include "Includes/mach_64.h"
 #include "Includes/mach_32.h"
 
-void ft_get_fat_arch(void *data, t_filegroup *gfile, int i, int offset)
+void	ft_get_fat_arch(void *data, t_filegroup *gfile, int i, int offset)
 {
 	t_fat_arch	arch;
-	uint32_t 	magic;
-	int 		big_end;
+	uint32_t	magic;
+	int			big_end;
 
 	magic = get_magic(data);
 	if (magic == FAT_CIGAM)
@@ -30,11 +38,11 @@ void ft_get_fat_arch(void *data, t_filegroup *gfile, int i, int offset)
 		puts("unknown file");
 }
 
-void ft_read_fat(void *data, t_filegroup *gfile)
+void	ft_read_fat(void *data, t_filegroup *gfile)
 {
 	t_fat_header	fat_head;
-	int 			offset;
-	int 			i;
+	int				offset;
+	int				i;
 
 	offset = sizeof(t_fat_header);
 	i = -1;

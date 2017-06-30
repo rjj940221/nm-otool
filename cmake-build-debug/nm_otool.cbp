@@ -138,7 +138,7 @@
 			<Option target="ft_otool"/>
 			<Option target="ft_nm"/>
 		</Unit>
-		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/nm-otool.h">
+		<Unit filename="/nfs/zfs-student-6/users/rojones/year2/nm-otool/Includes/nm_otool.h">
 			<Option target="ft_otool"/>
 			<Option target="ft_nm"/>
 		</Unit>
